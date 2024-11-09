@@ -13,7 +13,10 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ActionResults, handleLogin } from "@/app/dashboard/login/form/actions";
+import {
+  ActionResults,
+  handleLogin,
+} from "@/app/dashboard/(auth)/login/form/actions";
 import { useToast } from "@/hooks/use-toast";
 import { useFormStatus } from "react-dom";
 

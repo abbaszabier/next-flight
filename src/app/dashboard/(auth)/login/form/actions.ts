@@ -1,6 +1,6 @@
 "use server";
 
-import prisma from "../../../../../lib/prisma";
+import prisma from "../../../../../../lib/prisma";
 import { formSchema } from "./validation";
 import { redirect } from "next/navigation";
 import bcrypt from "bcrypt";
