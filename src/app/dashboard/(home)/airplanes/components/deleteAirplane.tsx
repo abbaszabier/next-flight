@@ -14,7 +14,12 @@ const ButtonDelete = () => {
   const { pending } = useFormStatus();
 
   return (
-    <Button size="sm" type="submit" variant="destructive" disabled={pending}>
+    <Button
+      size="sm"
+      type="submit"
+      variant="outlineDestructive"
+      disabled={pending}
+    >
       {pending ? (
         <>
           <Trash /> Deleting...
@@ -29,7 +34,7 @@ const ButtonDelete = () => {
 };
 
 export default function ButtonDeleteAirplane({ id }: AirplaneProps) {
-  const deleteAirplaneWithId = async (formData: FormData) => {
+  const deleteAirplaneWithId = async () => {
     await deleteDataAirplanesAction(id);
   };
 
