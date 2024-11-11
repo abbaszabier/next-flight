@@ -14,9 +14,7 @@ export default async function EditDataAirplanes({
   params,
 }: EditDataAirplanesProps) {
   const { id } = await params;
-
   const getDetail = await getDetailDataAirplanesAction(id);
-  console.log(getDetail);
 
   return (
     <div className="space-y-4">

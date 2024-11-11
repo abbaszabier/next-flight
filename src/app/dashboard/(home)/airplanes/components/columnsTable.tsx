@@ -28,6 +28,8 @@ export const columns: ColumnDef<Airplane>[] = [
           src={getUrlFile(plane.image)}
           width={150}
           height={150}
+          placeholder="blur"
+          blurDataURL={getUrlFile(plane.image)}
           alt={plane.name}
         />
       );

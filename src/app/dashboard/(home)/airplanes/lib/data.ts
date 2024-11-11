@@ -8,6 +8,7 @@ export async function getDataAirplanes() {
 
     return plane;
   } catch (error) {
+    console.log(error);
     return [];
   }
 }

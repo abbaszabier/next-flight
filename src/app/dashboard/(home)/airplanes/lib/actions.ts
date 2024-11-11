@@ -36,7 +36,7 @@ export async function createDataAirplanesAction(
   }
 
   try {
-    const data = await prisma.airplane.create({
+    await prisma.airplane.create({
       data: {
         code: values.data.code as string,
         name: values.data.name as string,
@@ -66,6 +66,7 @@ export async function getDetailDataAirplanesAction(id: string) {
 
     return data;
   } catch (error) {
+    console.log(error);
     return null;
   }
 }
@@ -139,7 +140,7 @@ export async function updateDataAirplanesAction(
   } catch (error) {
     return {
       errorTitle: "Failed to update airplane",
-      errorDecs: ["An error occurred while updating airplane"],
+      errorDecs: [String(error)],
     };
   }
 

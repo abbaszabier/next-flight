@@ -6,16 +6,14 @@ import { Input } from "@/components/ui/input";
 import InputFile from "@/components/ui/inputFile";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
-import React, { useActionState, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   createDataAirplanesAction,
   updateDataAirplanesAction,
-  deleteDataAirplanesAction,
 } from "../lib/actions";
 import { useFormStatus } from "react-dom";
 import { useToast } from "@/hooks/use-toast";
 import { Airplane } from "@prisma/client";
-import { Trash } from "lucide-react";
 
 interface FormAirplaneProps {
   type?: "create" | "edit";
@@ -42,8 +40,6 @@ export default function FormAirplane({
   defaultValues,
 }: FormAirplaneProps) {
   const [formState, setFormState] = useState(initialFormState);
-  console.log(defaultValues);
-
   const { toast } = useToast();
 
   useEffect(() => {

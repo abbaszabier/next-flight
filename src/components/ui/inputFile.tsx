@@ -46,13 +46,17 @@ const InputFile: React.FC<InputFileProps> = ({
         fileUrls.push(files[i]);
       }
       setFileName([...fileName, ...fileNames]);
-      setFileUrl && setFileUrl([...(fileUrl || []), ...fileUrls]);
+      if (setFileUrl) {
+        setFileUrl([...(fileUrl || []), ...fileUrls]);
+      }
     }
   };
 
   const handleDeleteList = (index: number) => {
     setFileName(fileName.filter((_, i) => i !== index));
-    setFileUrl && setFileUrl((fileUrl || []).filter((_, i) => i !== index));
+    if (setFileUrl) {
+      setFileUrl((fileUrl || []).filter((_, i) => i !== index));
+    }
   };
 
   return (
