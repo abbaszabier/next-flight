@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "../../globals.css";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { BookOpen, Plane, Ticket, User } from "lucide-react";
+import { BookOpen, Plane, TicketsPlane, User } from "lucide-react";
 import ButtonLogout from "./components/buttonLogout";
 import { getUser } from "@/lib/auth";
 import { redirect } from "next/navigation";
@@ -51,7 +51,7 @@ export default async function DashboardLayout({
             </Button>
             <Button variant="ghost" asChild className="w-full justify-start">
               <Link href="/dashboard/tickets">
-                <Ticket className="mr-2 w-4 h-4" /> Tickets
+                <TicketsPlane className="mr-2 w-4 h-4" /> Tickets
               </Link>
             </Button>
             <Button variant="ghost" asChild className="w-full justify-start">
