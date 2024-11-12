@@ -7,7 +7,7 @@ type Params = {
 };
 
 interface EditDataAirplanesProps {
-  params: Params;
+  params: Promise<Params>;
 }
 
 export default async function EditDataAirplanes({
