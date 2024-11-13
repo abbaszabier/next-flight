@@ -30,7 +30,7 @@ export default async function DashboardLayout({
           <ButtonLogout />
         </div>
       </nav>
-      <section className="flex flex-row items-start flex-nowrap grow">
+      <section className="flex flex-row items-start flex-nowrap grow overflow-hidden">
         <section className="grow-0 w-[20%] h-full shadow p-5 space-y-5">
           <div className="space-y-2">
             <Button variant="ghost" asChild className="w-full justify-start">

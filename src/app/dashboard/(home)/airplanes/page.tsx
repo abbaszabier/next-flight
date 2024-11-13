@@ -24,7 +24,7 @@ export default async function AirplanesPage() {
           </Link>
         </Button>
       </div>
-      <DataTable columns={columns} data={planes} />
+      <DataTable columns={columns} data={planes ? planes : []} />
     </div>
   );
 }
