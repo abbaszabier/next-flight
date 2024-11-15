@@ -1,19 +1,18 @@
 "use client";
 
 import { ActionResults } from "@/app/dashboard/(auth)/login/form/actions";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import InputFile from "@/components/ui/inputFile";
 import { Label } from "@/components/ui/label";
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import {
   createDataAirplanesAction,
   updateDataAirplanesAction,
 } from "../lib/actions";
-import { useFormStatus } from "react-dom";
 import { useToast } from "@/hooks/use-toast";
 import { Airplane } from "@prisma/client";
+import ButtonSubmitForm from "../../components/buttonSubmitForm";
+import ButtonCancelForm from "../../components/buttonCancelForm";
 
 interface FormAirplaneProps {
   type?: "create" | "edit";
@@ -23,16 +22,6 @@ interface FormAirplaneProps {
 const initialFormState: ActionResults = {
   errorTitle: null,
   errorDecs: [],
-};
-
-const SubmitButton: React.FC<FormAirplaneProps> = ({ type }) => {
-  const { pending } = useFormStatus();
-
-  return (
-    <Button type="submit" disabled={pending}>
-      {pending ? "Loading..." : type === "edit" ? "Update" : "Create"}
-    </Button>
-  );
 };
 
 export default function FormAirplane({
@@ -106,11 +95,9 @@ export default function FormAirplane({
         <Label htmlFor="image">Upload Image</Label>
         <InputFile ButtonName={"Upload"} isRefresh fileLimit={1} />
       </div>
-      <div className="flex gap-2 justify-start items-center">
-        <SubmitButton type={type} />
-        <Button variant="outline" type="button">
-          <Link href="/dashboard/airplanes">Cancel</Link>
-        </Button>
+      <div className="flex gap-2 py-2 w-full items-center">
+        <ButtonSubmitForm type={type} />
+        <ButtonCancelForm href="/dashboard/airplanes" />
       </div>
     </form>
   );
