@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function UserPage() {
   return (
     <div className="flex flex-row items-center justify-between">
-      <div className="text-2xl font-bold">Users</div>
+      <div className="sm:text-xl md:text-2xl font-bold">Users</div>
       <Button variant="default" asChild>
         <Link href="/dashboard/create">
           <Plus className="w-4 h-4" /> Add Data

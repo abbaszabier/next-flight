@@ -17,8 +17,8 @@ export default async function AirplanesPage() {
   return (
     <div className="space-y-4">
       <div className="flex flex-row items-center justify-between">
-        <div className="text-2xl font-bold">Airplanes</div>
-        <Button variant="outline" asChild>
+        <div className="sm:text-xl md:text-2xl font-bold">Airplanes</div>
+        <Button variant="default" asChild>
           <Link href="/dashboard/airplanes/create">
             <Plus className="w-4 h-4" /> Create Data
           </Link>
