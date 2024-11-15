@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import "../../globals.css";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { BookOpen, Plane, TicketsPlane, User } from "lucide-react";
-import ButtonLogout from "./components/buttonLogout";
 import { getUser } from "@/lib/auth";
 import { redirect } from "next/navigation";
+import NavbarBottom from "./components/navbarBottom";
+import NavbarSide from "./components/navbarSide";
+import ProfileMenu from "./components/profileMenu";
 
 export const metadata: Metadata = {
   title: "Dashboard",
@@ -24,46 +23,24 @@ export default async function DashboardLayout({
 
   return (
     <section className="flex flex-col h-screen">
-      <nav className="border-b border-muted p-5">
+      {/* Navbar at the top */}
+      <nav className="border-b border-muted px-5 py-3">
         <div className="flex flex-row items-center justify-between">
-          <span className="text-lg font-bold text-primary">Dashboard</span>
-          <ButtonLogout />
+          <span className="text-2xl font-bold text-primary">GoFlight</span>
+          <div className="flex flex-row items-center gap-3">
+            {user && <ProfileMenu user={{ ...user, password: "" }} />}
+          </div>
         </div>
       </nav>
-      <section className="flex flex-row items-start flex-nowrap grow overflow-hidden">
-        <section className="grow-0 w-[20%] h-full shadow p-5 space-y-5">
-          <div className="space-y-2">
-            <Button variant="ghost" asChild className="w-full justify-start">
-              <Link href="/dashboard">My Dashboard</Link>
-            </Button>
-          </div>
-          <div className="space-y-2">
-            <div className="uppercase text-xs font-bold">Master Data</div>
-            <Button variant="ghost" asChild className="w-full justify-start">
-              <Link href="/dashboard/airplanes">
-                <Plane className="mr-2 w-4 h-4" /> Airplanes
-              </Link>
-            </Button>
-            <Button variant="ghost" asChild className="w-full justify-start">
-              <Link href="/dashboard/flights">
-                <BookOpen className="mr-2 w-4 h-4" /> Flights
-              </Link>
-            </Button>
-            <Button variant="ghost" asChild className="w-full justify-start">
-              <Link href="/dashboard/tickets">
-                <TicketsPlane className="mr-2 w-4 h-4" /> Tickets
-              </Link>
-            </Button>
-            <Button variant="ghost" asChild className="w-full justify-start">
-              <Link href="/dashboard/users">
-                <User className="mr-2 w-4 h-4" /> Users
-              </Link>
-            </Button>
-          </div>
-        </section>
-        <section className="grow h-full overflow-y-auto p-5">
-          {children}
-        </section>
+      <section className="flex flex-row md:flex-row grow overflow-hidden">
+        {/* Desktop navbar at side */}
+        <NavbarSide />
+
+        {/* Main content area */}
+        <main className="flex-grow h-full overflow-y-auto p-5">{children}</main>
+
+        {/* Mobile navbar at bottom */}
+        <NavbarBottom />
       </section>
     </section>
   );
