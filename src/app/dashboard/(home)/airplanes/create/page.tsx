@@ -1,5 +1,10 @@
 import React from "react";
 import FormAirplane from "../components/formAirplane";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Dashboard | Create Airplane",
+};
 
 export default function CreateDataAirplanes() {
   return (

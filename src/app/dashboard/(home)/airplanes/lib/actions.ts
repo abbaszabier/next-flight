@@ -58,7 +58,7 @@ export async function createDataAirplanesAction(
 
 export async function getDetailDataAirplanesAction(id: string) {
   try {
-    const data = await prisma.airplane.findUnique({
+    const data = await prisma.airplane.findFirst({
       where: {
         id: id,
       },
