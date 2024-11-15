@@ -1,21 +1,31 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { LogOut } from "lucide-react";
 import React from "react";
 import { handleLogout } from "../actions";
 import { useFormStatus } from "react-dom";
+import { Spinner } from "@/components/ui/spinner";
+import { LogOut } from "lucide-react";
 
 const Logout: React.FC = () => {
   const { pending } = useFormStatus();
 
   return (
-    <Button disabled={pending} type="submit" variant="destructive">
+    <Button
+      disabled={pending}
+      type="submit"
+      variant="unstyled"
+      size="icon"
+      className="w-full flex justify-start p-0 m-0"
+    >
       {pending ? (
-        "Logging out..."
+        <div className="flex gap-2 items-start justify-start">
+          <Spinner /> Loading...
+        </div>
       ) : (
         <>
-          Logout <LogOut className="w-4 h-4" />
+          <LogOut />
+          Logout
         </>
       )}
     </Button>
@@ -24,7 +34,7 @@ const Logout: React.FC = () => {
 
 export default function ButtonLogout() {
   return (
-    <form action={handleLogout}>
+    <form action={handleLogout} className="w-full flex">
       <Logout />
     </form>
   );

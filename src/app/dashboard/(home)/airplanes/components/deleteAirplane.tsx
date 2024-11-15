@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useFormStatus } from "react-dom";
 import { Trash } from "lucide-react";
 import { deleteDataAirplanesAction } from "../lib/actions";
+import { Spinner } from "@/components/ui/spinner";
 
 interface AirplaneProps {
   id: string;
@@ -21,9 +22,9 @@ const ButtonDelete = () => {
       disabled={pending}
     >
       {pending ? (
-        <>
-          <Trash /> Deleting...
-        </>
+        <div className="flex gap-2 items-center">
+          <Spinner /> Loading...
+        </div>
       ) : (
         <>
           <Trash /> Delete
