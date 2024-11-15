@@ -16,7 +16,7 @@ const Logout: React.FC = () => {
       type="submit"
       variant="unstyled"
       size="icon"
-      className="w-full flex justify-start p-0 m-0"
+      className="w-full flex justify-start px-2 hover:bg-gray-100"
     >
       {pending ? (
         <div className="flex gap-2 items-start justify-start">

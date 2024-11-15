@@ -27,9 +27,7 @@ export default function ProfileMenu({ user }: ProfileMenuProps) {
             <UserRound size={18} className="mr-2" /> {user?.name} ({user?.role})
           </MenubarItem>
           <MenubarSeparator />
-          <MenubarItem className="py-0 my-0">
-            <ButtonLogout />
-          </MenubarItem>
+          <ButtonLogout />
         </MenubarContent>
       </MenubarMenu>
     </Menubar>
