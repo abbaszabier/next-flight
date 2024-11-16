@@ -29,7 +29,7 @@ export default function NavbarBottom() {
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 md:hidden bg-white shadow-md p-3 flex justify-around border-t border-muted">
+    <nav className="fixed bottom-0 left-0 right-0 md:hidden shadow-md p-3 flex justify-around border-t border-muted">
       {menuItems.map((item) => (
         <Link
           key={item.href}

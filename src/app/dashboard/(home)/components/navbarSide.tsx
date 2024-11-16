@@ -31,7 +31,7 @@ export default function NavbarSide() {
   ];
 
   return (
-    <aside className="hidden md:flex md:flex-col md:w-[20%] h-full shadow p-5 space-y-5">
+    <aside className="hidden md:flex md:flex-col md:w-[16%] h-full shadow p-5 space-y-5 md:border-r md:border-muted">
       <div className="space-y-2">
         {menuItems.map((item) => (
           <Button
@@ -40,7 +40,7 @@ export default function NavbarSide() {
             asChild
             className={`w-full justify-start ${
               isActive(item.href)
-                ? "bg-primary text-primary-foreground hover:bg-primary hover:text-white"
+                ? "bg-primary text-primary-foreground hover:bg-primary hover:text-white dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary dark:hover:text-[#000]"
                 : ""
             }`}
           >
