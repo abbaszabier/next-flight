@@ -1,6 +1,6 @@
 "use client";
 
-import { ActionResults } from "@/app/dashboard/(auth)/login/form/actions";
+import { ActionResults } from "@/app/dashboard/(auth)/login/lib/actions";
 import { Input } from "@/components/ui/input";
 import InputFile from "@/components/ui/inputFile";
 import { Label } from "@/components/ui/label";

@@ -1,6 +1,6 @@
 "use server";
 
-import type { ActionResults } from "@/app/dashboard/(auth)/login/form/actions";
+import type { ActionResults } from "@/app/dashboard/(auth)/login/lib/actions";
 import { airplaneFormSchema } from "./validation";
 import { redirect } from "next/navigation";
 import { deleteFile, uploadFile } from "@/lib/supabase";

@@ -16,7 +16,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   ActionResults,
   handleLogin,
-} from "@/app/dashboard/(auth)/login/form/actions";
+} from "@/app/dashboard/(auth)/login/lib/actions";
 import { useToast } from "@/hooks/use-toast";
 import { useFormStatus } from "react-dom";
 
