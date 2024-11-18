@@ -63,7 +63,7 @@ model Flight {
   plane       Airplane @relation(fields: [planeId], references: [id])
   departureDate DateTime
   departureCity String
-  dapartureCityCode String
+  departureCityCode String
   arrivalDate   DateTime
   destinationCity String
   destinationCityCode String

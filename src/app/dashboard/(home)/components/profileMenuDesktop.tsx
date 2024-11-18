@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Moon, Sun } from "lucide-react";
+import { ChevronDown, Moon, Sun } from "lucide-react";
 import {
   Menubar,
   MenubarContent,
@@ -29,8 +29,8 @@ export default function ProfileMenuDesktop({ user }: ProfileMenuProps) {
     <Menubar className="hidden md:flex cursor-pointer shadow-none w-fit p-0 border-0 rounded-full">
       <MenubarMenu>
         <MenubarTrigger className="px-2 data-[state=open]:bg-gray-100 py-2 rounded-full focus:bg-transparent data-[state=open]:bg-transparent">
-          <div className="flex flex-row items-center justify-start gap-2 cursor-pointer">
-            <div className="bg-accent py-2 px-4 text-lg rounded-full">
+          <div className="flex flex-row items-center justify-start gap-1 cursor-pointer">
+            <div className="bg-accent py-2 px-4 text-lg rounded-full mr-2">
               {firstLetter}
             </div>
             <div className="text-center flex flex-col items-start justify-center">
@@ -39,6 +39,7 @@ export default function ProfileMenuDesktop({ user }: ProfileMenuProps) {
                 {user?.role}
               </p>
             </div>
+            <ChevronDown className="w-4 h-4" />
           </div>
         </MenubarTrigger>
         <MenubarContent>

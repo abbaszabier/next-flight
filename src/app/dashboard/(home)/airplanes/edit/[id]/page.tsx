@@ -1,6 +1,7 @@
 import React from "react";
 import FormAirplane from "../../components/formAirplane";
 import { getDetailDataAirplanesAction } from "../../lib/actions";
+import { Metadata } from "next";
 
 type Params = {
   id: string;
@@ -9,6 +10,10 @@ type Params = {
 interface EditDataAirplanesProps {
   params: Promise<Params>;
 }
+
+export const metadata: Metadata = {
+  title: "Dashboard | Edit Airplane",
+};
 
 export default async function EditDataAirplanes({
   params,

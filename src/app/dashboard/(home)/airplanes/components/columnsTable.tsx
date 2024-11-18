@@ -24,16 +24,18 @@ export const columns: ColumnDef<Airplane>[] = [
       const plane = row.original;
 
       return (
-        <Image
-          src={getUrlFile(plane.image)}
-          width={150}
-          height={150}
-          style={{ width: "auto", height: "auto" }}
-          placeholder="blur"
-          priority={true}
-          blurDataURL={getUrlFile(plane.image)}
-          alt={plane.name}
-        />
+        <div className="inline-flex items-center gap-4">
+          <Image
+            src={getUrlFile(plane.image)}
+            width={150}
+            height={150}
+            style={{ width: "auto", height: "auto" }}
+            placeholder="blur"
+            priority={true}
+            blurDataURL={getUrlFile(plane.image)}
+            alt={plane.name}
+          />
+        </div>
       );
     },
   },
@@ -52,7 +54,7 @@ export const columns: ColumnDef<Airplane>[] = [
       const plane = row.original;
 
       return (
-        <div className="flex gap-5 items-center">
+        <div className="flex gap-5 items-center justify-center">
           <Button size="sm" variant="secondary" asChild>
             <Link href={`/dashboard/airplanes/edit/${plane?.id}`}>
               <Edit className="w-4 h-4" /> Edit
