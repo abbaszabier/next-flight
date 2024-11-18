@@ -6,8 +6,6 @@ import { ColumnDef } from "@tanstack/react-table";
 import { Edit } from "lucide-react";
 import Link from "next/link";
 import ButtonDeleteFlight from "./deleteFlight";
-import Image from "next/image";
-import { getUrlFile } from "@/lib/supabase";
 import ColumnSeatPrice from "./columnSeatPrice";
 import ColumnRouteFlight from "./columnRouteFlight";
 
@@ -30,21 +28,8 @@ export const columns: ColumnDef<FlightColumn>[] = [
     cell: ({ row }) => {
       const flight = row.original;
 
-      const planeImage = getUrlFile(flight.plane.image);
-
       return (
         <div className="inline-flex items-center gap-4">
-          <Image
-            src={planeImage}
-            alt={flight.plane.name}
-            width={100}
-            height={100}
-            className="rounded-lg"
-            style={{ width: "auto", height: "auto" }}
-            placeholder="blur"
-            priority={true}
-            blurDataURL={getUrlFile(flight.plane.image)}
-          />
           <div className="font-semibold">{flight.plane.name}</div>
         </div>
       );
