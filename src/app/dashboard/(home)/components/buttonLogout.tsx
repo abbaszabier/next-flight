@@ -19,7 +19,7 @@ const Logout: React.FC = () => {
       className="w-full flex justify-start px-2 hover:bg-accent"
     >
       {pending ? (
-        <div className="flex gap-2 items-start justify-start">
+        <div className="flex gap-2 items-center justify-start">
           <Spinner /> Loading...
         </div>
       ) : (
