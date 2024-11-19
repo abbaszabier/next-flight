@@ -13,7 +13,7 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar";
 import ButtonLogout from "./buttonLogout";
-import { Moon, Settings, Sun, UserRound } from "lucide-react";
+import { Moon, Settings, Sun, SunMoon, UserRound } from "lucide-react";
 import { User } from "@prisma/client";
 import { useTheme } from "next-themes";
 
@@ -39,24 +39,26 @@ export default function ProfileMenuMobile({ user }: ProfileMenuProps) {
             <MenubarSubTrigger>
               {theme === "dark" ? (
                 <div className="flex flex-row items-center justify-start gap-2">
-                  <Moon className="w-5 h-5" />
+                  <Moon size={18} className="w-5 h-5" />
                   <span>Dark Mode</span>
+                </div>
+              ) : theme === "light" ? (
+                <div className="flex flex-row items-center justify-start gap-2">
+                  <Sun size={18} className="w-5 h-5" />
+                  <span>Light Mode</span>
                 </div>
               ) : (
                 <div className="flex flex-row items-center justify-start gap-2">
-                  <Sun className="w-5 h-5" />
-                  <span>Light Mode</span>
+                  <SunMoon size={18} className="w-5 h-5" />
+                  <span>System Mode</span>
                 </div>
               )}
             </MenubarSubTrigger>
             <MenubarSubContent>
-              <MenubarItem onClick={() => setTheme("dark")}>
-                <Moon className="w-5 h-5 mr-2" />
-                Dark Mode
-              </MenubarItem>
-              <MenubarItem onClick={() => setTheme("light")}>
-                <Sun className="w-5 h-5 mr-2" />
-                Light Mode
+              <MenubarItem onClick={() => setTheme("dark")}>Dark</MenubarItem>
+              <MenubarItem onClick={() => setTheme("light")}>Light</MenubarItem>
+              <MenubarItem onClick={() => setTheme("system")}>
+                System
               </MenubarItem>
             </MenubarSubContent>
           </MenubarSub>

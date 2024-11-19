@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ChevronDown, Moon, Sun } from "lucide-react";
+import { ChevronDown, Moon, Sun, SunMoon } from "lucide-react";
 import {
   Menubar,
   MenubarContent,
@@ -50,21 +50,23 @@ export default function ProfileMenuDesktop({ user }: ProfileMenuProps) {
                   <Moon size={18} className="w-5 h-5" />
                   <span>Dark Mode</span>
                 </div>
-              ) : (
+              ) : theme === "light" ? (
                 <div className="flex flex-row items-center justify-start gap-2">
                   <Sun size={18} className="w-5 h-5" />
                   <span>Light Mode</span>
                 </div>
+              ) : (
+                <div className="flex flex-row items-center justify-start gap-2">
+                  <SunMoon size={18} className="w-5 h-5" />
+                  <span>System Mode</span>
+                </div>
               )}
             </MenubarSubTrigger>
             <MenubarSubContent>
-              <MenubarItem onClick={() => setTheme("dark")}>
-                <Moon className="w-5 h-5 mr-2" />
-                Dark Mode
-              </MenubarItem>
-              <MenubarItem onClick={() => setTheme("light")}>
-                <Sun className="w-5 h-5 mr-2" />
-                Light Mode
+              <MenubarItem onClick={() => setTheme("dark")}>Dark</MenubarItem>
+              <MenubarItem onClick={() => setTheme("light")}>Light</MenubarItem>
+              <MenubarItem onClick={() => setTheme("system")}>
+                System
               </MenubarItem>
             </MenubarSubContent>
           </MenubarSub>
