@@ -3,7 +3,7 @@ import { DataTable } from "@/components/ui/dataTable";
 import { Plus } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-import { columns } from "./components/columnsTable";
+import { columns } from "./components/columnsAirplane";
 import { getDataAirplanes } from "./lib/data";
 import { Metadata } from "next";
 
