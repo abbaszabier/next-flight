@@ -18,9 +18,5 @@ export default async function AuthLayout({
     redirect("/dashboard");
   }
 
-  return (
-    <html lang="en">
-      <body className={`font-poppins`}> {children}</body>
-    </html>
-  );
+  return <> {children}</>;
 }
