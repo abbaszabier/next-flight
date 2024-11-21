@@ -72,8 +72,8 @@ const FormLogin: React.FC<FormLoginProps> = () => {
   }, [formState.errorTitle, formState.errorDecs, toast]);
 
   return (
-    <div className="w-full h-screen">
-      <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+    <div className="w-full h-screen flex items-center justify-center">
+      <div className="flex min-h-full flex-1 items-center justify-center px-6 py-12 lg:px-8">
         <Tabs defaultValue="signin" className="w-[400px]">
           <TabsList className="grid w-full grid-cols-2">
             <TabsTrigger value="signin">Sign In</TabsTrigger>
