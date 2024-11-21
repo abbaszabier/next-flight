@@ -65,5 +65,5 @@ export async function handleLogin(
     sessionCookie.attributes
   );
 
-  return redirect("/dashboard");
+  redirect("/dashboard");
 }

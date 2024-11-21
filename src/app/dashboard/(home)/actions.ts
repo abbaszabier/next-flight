@@ -21,5 +21,5 @@ export async function handleLogout(): Promise<void> {
     sessionCookie.attributes
   );
 
-  return redirect("/dashboard/login");
+  redirect("/dashboard/login");
 }
