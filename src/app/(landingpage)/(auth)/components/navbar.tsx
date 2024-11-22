@@ -5,6 +5,29 @@ import React from "react";
 // type Props = {}
 
 export default function Navbar() {
+  const menuItems = [
+    {
+      label: "Flash Sale",
+      href: "/flashsale",
+    },
+    {
+      label: "Discover",
+      href: "/discover",
+    },
+    {
+      label: "Packages",
+      href: "/packages",
+    },
+    {
+      label: "Stories",
+      href: "/stories",
+    },
+    {
+      label: "About",
+      href: "/about",
+    },
+  ];
+
   return (
     <>
       <nav
@@ -20,31 +43,13 @@ export default function Navbar() {
           />
         </Link>
         <ul className="nav-menus flex gap-[30px] items-center w-fit">
-          <li>
-            <Link href="/flashsale" className="font-medium">
-              Flash Sale
-            </Link>
-          </li>
-          <li>
-            <Link href="/discover" className="font-medium">
-              Discover
-            </Link>
-          </li>
-          <li>
-            <Link href="/packages" className="font-medium">
-              Packages
-            </Link>
-          </li>
-          <li>
-            <Link href="/stories" className="font-medium">
-              Stories
-            </Link>
-          </li>
-          <li>
-            <Link href="/about" className="font-medium">
-              About
-            </Link>
-          </li>
+          {menuItems.map((item) => (
+            <li key={item.href}>
+              <Link href={item.href} className="font-medium text-white">
+                {item.label}
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
     </>
