@@ -1,12 +1,19 @@
 import "../../globals.css";
 import Navbar from "../../../components/navbar";
 import RunningCompany from "./components/runningCompany";
+import { getUser } from "@/lib/auth";
+import { redirect } from "next/navigation";
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const { session, user } = await getUser();
+
+  if (session && user?.role === "CUSTOMER") {
+    redirect("/");
+  }
   return (
     <section
       id="Signup"
