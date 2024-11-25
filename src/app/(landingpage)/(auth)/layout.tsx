@@ -14,6 +14,7 @@ export default async function RootLayout({
   if (session && user?.role === "CUSTOMER") {
     redirect("/");
   }
+
   return (
     <section
       id="Signup"

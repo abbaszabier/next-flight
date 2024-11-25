@@ -13,7 +13,7 @@ export default async function NavbarAuth() {
       ) : (
         <div className="inline-flex items-center gap-3">
           <Link href="/signin">
-            <button className="font-bold text-flysha-black bg-flysha-light-purple rounded-full p-[12px_30px] transition-all duration-300 hover:shadow-[0_10px_20px_0_#B88DFF]">
+            <button className="font-bold text-flysha-black bg-flysha-light-purple rounded-lg px-6 py-2 transition-all duration-300">
               Sign In
             </button>
           </Link>

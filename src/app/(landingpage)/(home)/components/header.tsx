@@ -1,5 +1,5 @@
 import Navbar from "@/components/navbar";
-import { Calendar, PlaneLanding, PlaneTakeoff } from "lucide-react";
+import { Calendar, PlaneLanding, PlaneTakeoff, Search } from "lucide-react";
 import React from "react";
 import { SelectDeparture } from "./selectDeparture";
 import { SelectArrival } from "./selectArrival";
@@ -75,7 +75,8 @@ export default async function Header() {
 
             {/* Button */}
             <div className="w-full lg:w-auto">
-              <button className="block text-center font-bold text-lg text-white bg-purple-600 rounded-lg py-3 px-8 shadow-md hover:bg-purple-700 transition hover:shadow-lg w-full lg:w-auto">
+              <button className="flex flex-row items-center gap-2 justify-center text-center font-bold text-lg font-bold text-flysha-black bg-flysha-light-purple rounded-lg py-3 px-8 shadow-md w-full lg:w-auto">
+                <Search />
                 Explore
               </button>
             </div>
