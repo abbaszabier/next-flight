@@ -35,7 +35,7 @@ const SignInButton: React.FC = () => {
     <Button type="submit" disabled={pending} className="w-full">
       {pending ? (
         <>
-          <Spinner className="w-5 h-5 mr-1" /> Loading...
+          <Spinner className="w-5 h-5" /> Loading...
         </>
       ) : (
         "Sign In"
@@ -51,7 +51,7 @@ const SignUpButton: React.FC = () => {
     <Button type="submit" disabled={pending} className="w-full">
       {pending ? (
         <>
-          <Spinner className="w-5 h-5 mr-1" /> Loading...
+          <Spinner className="w-5 h-5" /> Loading...
         </>
       ) : (
         "Sign Up"
