@@ -19,6 +19,7 @@ import {
 } from "@/app/dashboard/(auth)/login/lib/actions";
 import { useToast } from "@/hooks/use-toast";
 import { useFormStatus } from "react-dom";
+import { Spinner } from "@/components/ui/spinner";
 
 type FormLoginProps = object;
 
@@ -32,7 +33,13 @@ const SignInButton: React.FC = () => {
 
   return (
     <Button type="submit" disabled={pending} className="w-full">
-      {pending ? "Loading..." : "Sign In"}
+      {pending ? (
+        <>
+          <Spinner className="w-5 h-5 mr-1" /> Loading...
+        </>
+      ) : (
+        "Sign In"
+      )}
     </Button>
   );
 };
@@ -42,7 +49,13 @@ const SignUpButton: React.FC = () => {
 
   return (
     <Button type="submit" disabled={pending} className="w-full">
-      {pending ? "Loading..." : "Sign Up"}
+      {pending ? (
+        <>
+          <Spinner className="w-5 h-5 mr-1" /> Loading...
+        </>
+      ) : (
+        "Sign Up"
+      )}
     </Button>
   );
 };
