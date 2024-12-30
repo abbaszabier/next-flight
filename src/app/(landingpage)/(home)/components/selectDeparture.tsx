@@ -56,24 +56,20 @@ export function SelectDeparture({ getData }: DataDepartureProps) {
           <CommandList>
             <CommandEmpty>No Data.</CommandEmpty>
             <CommandGroup>
-              {getData?.length === 0 ? (
-                <CommandEmpty>No Data.</CommandEmpty>
-              ) : (
-                getData?.map((data) => (
-                  <CommandItem
-                    key={data.departureCity}
-                    value={data.departureCity}
-                    onSelect={(currentValue) => {
-                      setValue(currentValue === value ? "" : currentValue);
-                      setOpen(false);
-                    }}
-                    className={cn("flex items-center justify-between w-full")}
-                  >
-                    <span>{data.departureCity}</span>
-                    {value === data.departureCity && <Check />}
-                  </CommandItem>
-                ))
-              )}
+              {getData?.map((data) => (
+                <CommandItem
+                  key={data.departureCity}
+                  value={data.departureCity}
+                  onSelect={(currentValue) => {
+                    setValue(currentValue === value ? "" : currentValue);
+                    setOpen(false);
+                  }}
+                  className={cn("flex items-center justify-between w-full")}
+                >
+                  <span>{data.departureCity}</span>
+                  {value === data.departureCity && <Check />}
+                </CommandItem>
+              ))}
             </CommandGroup>
           </CommandList>
         </Command>

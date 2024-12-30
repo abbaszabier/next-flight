@@ -56,24 +56,20 @@ export function SelectArrival({ getData }: DataArrivalProps) {
           <CommandList>
             <CommandEmpty>No Data.</CommandEmpty>
             <CommandGroup>
-              {getData?.length === 0 ? (
-                <CommandEmpty>No Data.</CommandEmpty>
-              ) : (
-                getData?.map((data) => (
-                  <CommandItem
-                    key={data.destinationCity}
-                    value={data.destinationCity}
-                    onSelect={(currentValue) => {
-                      setValue(currentValue === value ? "" : currentValue);
-                      setOpen(false);
-                    }}
-                    className={cn("flex items-center justify-between w-full")}
-                  >
-                    <span>{data.destinationCity}</span>
-                    {value === data.destinationCity && <Check />}
-                  </CommandItem>
-                ))
-              )}
+              {getData?.map((data) => (
+                <CommandItem
+                  key={data.destinationCity}
+                  value={data.destinationCity}
+                  onSelect={(currentValue) => {
+                    setValue(currentValue === value ? "" : currentValue);
+                    setOpen(false);
+                  }}
+                  className={cn("flex items-center justify-between w-full")}
+                >
+                  <span>{data.destinationCity}</span>
+                  {value === data.destinationCity && <Check />}
+                </CommandItem>
+              ))}
             </CommandGroup>
           </CommandList>
         </Command>

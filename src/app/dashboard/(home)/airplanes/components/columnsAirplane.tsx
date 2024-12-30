@@ -29,7 +29,6 @@ export const columns: ColumnDef<Airplane>[] = [
             src={getUrlFile(plane.image)}
             width={150}
             height={150}
-            style={{ width: "auto", height: "auto" }}
             placeholder="blur"
             priority={true}
             blurDataURL={getUrlFile(plane.image)}
