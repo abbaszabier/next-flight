@@ -9,24 +9,16 @@ import NavbarAuth from "./navbarAuth";
 export default function Navbar() {
   const menuItems = [
     {
-      label: "Flash Sale",
-      href: "/flashsale",
+      label: "Why Us",
+      href: "/whyus",
     },
     {
       label: "Discover",
       href: "/discover",
     },
     {
-      label: "Packages",
-      href: "/packages",
-    },
-    {
-      label: "Stories",
-      href: "/stories",
-    },
-    {
-      label: "About",
-      href: "/about",
+      label: "Testimonials",
+      href: "/testimonials",
     },
   ];
 

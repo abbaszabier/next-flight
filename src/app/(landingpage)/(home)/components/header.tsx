@@ -74,8 +74,8 @@ export default async function Header() {
             </div>
 
             {/* Button */}
-            <div className="w-full lg:w-auto">
-              <button className="flex flex-row items-center gap-2 justify-center text-center font-bold text-lg font-bold text-flysha-black bg-flysha-light-purple rounded-lg py-3 px-8 shadow-md w-full lg:w-auto">
+            <div className="w-full lg:w-auto h-full">
+              <button className="flex flex-row items-center gap-2 justify-center text-center font-bold text-lg font-bold text-flysha-black bg-flysha-light-purple h-full rounded-lg py-4 px-8 shadow-md w-full lg:w-auto">
                 <Search />
                 Explore
               </button>
